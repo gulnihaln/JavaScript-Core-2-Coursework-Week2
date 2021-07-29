@@ -27,7 +27,7 @@ function highlightWords(paragraph, colours) {
       }else {
         spanEl.style.backgroundColor = selectEl.value;
       }
-    })
+    });
 
   });
 }
