@@ -37,6 +37,32 @@ const emailFormEl = document.getElementById('exampleInputEmail1');
 const nameFormEl = document.getElementById('example-text-input');
 const textFormEl = document.getElementById('exampleTextarea');
 
-submitBtnFormEl.addEventListener('click', ()=> {
-  
+submitBtnFormEl.addEventListener('click', (e)=> {
+  e.preventDefault();
+  if(emailFormEl.value > 0 && textFormEl.value.includes('@')){
+    emailFormEl.style.backgroundColor = 'white';
+  }else {
+    emailFormEl.style.backgroundColor = 'red';
+  }
+  //name form 
+  if(nameFormEl.value > 0){
+    nameFormEl.style.backgroundColor = 'white';
+  }else {
+    nameFormEl.style.backgroundColor = 'red';
+  }
+  //description form
+  if(textFormEl.value > 0){
+    textFormEl.style.backgroundColor = 'white';
+  }else {
+    textFormEl.style.backgroundColor = 'red';
+  }
+
+  //Alert 
+  if (emailFormEl.value > 0 && textFormEl.value.includes('@') && nameFormEl.value > 0 && textFormEl.value > 0){
+    emailFormEl.value = '';
+    nameFormEl.value = '';
+    textFormEl.value = '';
+    alert(`Thank you for filling out the form!!!`)
+  }
+
 });
